@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <div id="chatbox">
+        {% for entry in chat_history %}
+            <p><strong>{{ entry.role }}:</strong> {{ entry.text }}</p>
+        {% endfor %}
+    </div>
+    <form method="post">
+        <input type="text" name="user_input" required>
+        <button type="submit">Send</button>
+    </form>
+    {% if download_link %}
+        <a href="/download">Download PDF</a>
+    {% endif %}
+</body>
+</html>
